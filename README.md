@@ -1,5 +1,5 @@
 # Static Boilerplate
-## Compiling architecture to build & deliver static readable web pages
+### Compiling architecture to build & deliver static readable web pages
 ---
 
 ## Development
