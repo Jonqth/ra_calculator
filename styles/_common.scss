@@ -1,0 +1,23 @@
+/* -------------
+Common styles
+-------------- */
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: $rvl-white;
+  color: $rvl-black;
+}

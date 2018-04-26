@@ -1,0 +1,32 @@
+/* -------------
+Home page styles
+-------------- */
+
+.home {
+  &.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: $rvl-black;
+    color: $rvl-white;
+    text-align: center;
+
+    img {
+      width: 12.8rem;
+      height: 12.8rem;
+      object-fit: contain;
+    }
+
+    h1,
+    h3 {
+      letter-spacing: .1rem;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin: 2.4rem;
+    }
+
+    h3 { font-size: 1.8rem; }
+  }
+}
