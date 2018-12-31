@@ -21,15 +21,15 @@
   },
   "homepage": "https://github.com/Jonqth/ra_calculator#readme",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.0",
-    "gulp-filter": "^4.0.0",
-    "gulp-imagemin": "^3.3.0",
+    "gulp-filter": "^5.1.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-notify": "^3.2.0",
     "gulp-sass": "^4.0.2",
-    "gulp-svgo": "^1.5.4",
-    "gulp-uglify": "^1.5.4",
+    "gulp-svgo": "^2.1.0",
+    "gulp-uglify": "^3.0.1",
     "main-bower-files": "^2.13.1",
     "minimatch": "^3.0.4"
   }
