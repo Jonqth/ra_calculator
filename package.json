@@ -1,27 +1,25 @@
 {
-  "name": "rvl-static-boilerplate",
+  "name": "ra-calculator",
   "version": "1.0.0",
-  "description": "Boilerplate for static development",
+  "description": "RA",
   "main": "index.html",
   "scripts": {
     "gulp-build": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/revealstudio/rvl-static-boilerplate.git"
+    "url": "git+https://github.com/Jonqth/ra_calculator.git"
   },
   "keywords": [
-    "reveal studio",
-    "boilerplate",
     "web",
     "static"
   ],
-  "author": "Jonathan Levy (Reveal Studio)",
+  "author": "Jonathan Levy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/revealstudio/rvl-static-boilerplate/issues"
+    "url": "https://github.com/Jonqth/ra_calculator/issues"
   },
-  "homepage": "https://github.com/revealstudio/rvl-static-boilerplate#readme",
+  "homepage": "https://github.com/Jonqth/ra_calculator#readme",
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -29,9 +27,10 @@
     "gulp-filter": "^4.0.0",
     "gulp-imagemin": "^3.3.0",
     "gulp-notify": "^3.2.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-svgo": "^1.1.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-svgo": "^1.5.4",
     "gulp-uglify": "^1.5.4",
-    "main-bower-files": "^2.13.1"
+    "main-bower-files": "^2.13.1",
+    "minimatch": "^3.0.4"
   }
 }
