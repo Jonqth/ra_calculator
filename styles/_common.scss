@@ -15,10 +15,25 @@ body {
   width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(90deg, $ra-yellow 52%, $ra-deepgrey 48%);
+  background: $ra-yellow;
+
+  @media screen and (min-width: $break-md-ls) {
+    background: linear-gradient(90deg, $ra-yellow 52%, $ra-deepgrey 48%);
+  }
 }
 
 ::selection {
   background-color: $ra-yellow;
   color: $ra-white;
+}
+
+.ovals__large {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+
+  @media screen and (min-width: $break-md-ls) {
+    visibility: visible;
+  }
 }

@@ -1,3 +1,31 @@
 /* -------------
 Types styles
 -------------- */
+
+h1, h2 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 38px;
+    color: $ra-darkgrey;
+
+    @media screen and (min-width: $break-md-ls) {
+        font-size: 52px;
+        line-height: 75px;
+    }
+}
+
+h2 {
+    font-size: 16px;
+    line-height: 20px;
+    color: $ra-white;
+
+    @media screen and (min-width: $break-md-ls) {
+        font-size: 36px;
+        line-height: 52px;
+    }
+}

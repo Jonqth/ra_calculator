@@ -23,8 +23,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.3.1",
-    "basscss": "^8.0.10"
+    "jquery": "^3.3.1"
   },
   "devDependencies": {}
 }

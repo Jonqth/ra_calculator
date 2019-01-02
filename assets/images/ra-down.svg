@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Star</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop-🖥" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-1249.000000, -188.000000)" fill="#D8D8D8" fill-rule="nonzero">
+            <g id="Right" transform="translate(801.000000, -121.000000)">
+                <g id="Form" transform="translate(31.000000, 281.000000)">
+                    <g id="Dropdown">
+                        <polygon id="Star" transform="translate(423.500000, 31.000000) rotate(-180.000000) translate(-423.500000, -31.000000) " points="423.5 34 417.004809 34 420.252405 29.5 423.5 25 426.747595 29.5 429.995191 34"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -14,6 +14,7 @@ Colors
 -------------- */
 $ra-white:              #FFF;
 $ra-black:              #000;
+$ra-darkgrey:           #333333;
 $ra-deepgrey:           #555555;
 $ra-lightergrey:        #474747;
 $ra-deepergrey:         #3B3B3B;
@@ -24,3 +25,29 @@ $ra-yellow:             #FED500;
 /* -------------
 fonts
 -------------- */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-Medium.woff2') format('woff2'),
+        url('../assets/fonts/Montserrat-Medium.woff') format('woff'),
+        url('../assets/fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Montserrat-Bold.woff') format('woff'),
+        url('../assets/fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat-SemiBold.woff2') format('woff2'),
+        url('../assets/fonts/Montserrat-SemiBold.woff') format('woff'),
+        url('../assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

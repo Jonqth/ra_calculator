@@ -39,7 +39,6 @@ gulp.task('scripts', function() {
   * @return concat compressed file vendors.js into public/js`
 */
 gulp.task('vendors', function() {
-	console.log(bower_files())
 	return gulp.src(bower_files())
 		.pipe(filter('**/*.js'))
 		.pipe(uglify())

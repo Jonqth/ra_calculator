@@ -1,0 +1,38 @@
+/* FIELD */
+
+.field {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: $ra-white;
+    background-color: $ra-lightergrey;
+    height: 48px;
+    padding: 0 26px;
+    box-sizing: border-box;
+
+    @media screen and (min-width: $break-md-ls) {
+        height: 64px;
+    }
+}
+
+.form__reference {
+    background: url('../../assets/images/ra-down.svg') no-repeat 94% center $ra-lightergrey;
+
+    select {
+        background: transparent;
+        border: none;
+        width: 100%;
+        height: 48px;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 14px;
+        color: $ra-white;
+        outline: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        @media screen and (min-width: $break-md-ls) {
+            height: 64px;
+        }
+    }
+}

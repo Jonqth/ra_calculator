@@ -10,13 +10,37 @@
 </head>
 <body>
   <div class="home wrapper flex flex-wrap">
-    <div class="leftside col-7">
+    <div class="leftside sm-col sm-col-12 lg-col-7">
+      <h1>
+        Calculateur <br />
+        d’allures <br />
+        de compétitions
+      </h1>
+      <h2>
+        5k, 10k, Semi, Marathon
+      </h2>
     </div>
-    <div class="rightside col-5">
+    <div class="rightside sm-col sm-col-12 lg-col-5">
+      <form class="wrapper__form">
+        <div class="form__reference field">
+          <select name="reference">
+            <option value="42" selected>42 KM</option>
+            <option value="21">21 KM</option>
+            <option value="10">10 KM</option>
+            <option value="5">5 KM</option>
+          </select>
+        </div>
+      </form>
     </div>
   </div>
 
-    <script src="public/js/vendors.js"></script>
-    <script src="public/js/main.js"></script>
+  <img
+    class="ovals__large"
+    src="assets/images/ra-ovals.svg" 
+    alt="Running Addict - Calculateur d'allures" 
+  />
+
+  <script src="public/js/vendors.js"></script>
+  <script src="public/js/main.js"></script>
 </body>
 </html>

@@ -7,16 +7,6 @@ Home page styles
     width: 100%;
     height: 100%;
 
-    .leftside {
-      height: 100vh;
-      background-color: $ra-yellow;
-    }
-
-    .rightside {
-      height: 100vh;
-      background-color: $ra-deepgrey;
-    }
-
     @media screen and (min-width: $break-md-ls) {
       margin: auto;
       max-width: 1140px;
@@ -32,4 +22,58 @@ Home page styles
       max-width: 360px;
     }
   }
+
+  .leftside {
+    background-color: $ra-yellow;
+
+    @media screen and (min-width: $break-md) {
+      height: 0;
+    }
+
+    @media screen and (min-width: $break-md-ls) {
+      height: 100vh;
+    }
+
+    h1 {
+      padding-top: 32px;
+      margin-bottom: 12px;
+
+      @media screen and (min-width: $break-md-ls) {
+        padding-top: 170px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .rightside {
+    background-color: $ra-deepgrey;
+
+    @media screen and (min-width: $break-md-ls) {
+      padding-left: 30px;
+      height: 100vh;
+    }
+
+    @media screen and (min-width: $break-md) {
+      height: 542px;
+    }
+
+    @media screen and (max-width: $break-xs) {
+      margin-top: 24px;
+      width: 100%;
+      height: 895px;
+    }
+
+    .wrapper__form {
+      padding-top: 24px;
+
+      @media screen and (min-width: $break-md-ls) {
+        padding-top: 160px;
+      }
+  
+      @media screen and (max-width: $break-md) {
+        height: 32px;
+      }
+    }
+  }
+  
 }
