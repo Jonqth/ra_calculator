@@ -6,6 +6,7 @@ var gulp = require('gulp'),
 		sass = require ('gulp-sass'),
 		notify = require('gulp-notify'),
 		svgo = require('gulp-svgo'),
+		babel = require('gulp-babel'),
 		imagemin = require('gulp-imagemin'),
 		bower_files = require('main-bower-files');
 
@@ -14,8 +15,8 @@ var config = {
 	js_path:       'scripts',
 	img_path:      'assets/images',
   font_path:     'assets/fonts',
-	bower_path:  	 'bower_components' ,
-	ouput_path:    'public'
+	bower_path:  	 'bower_components',
+	ouput_path:    'public',
 }
 
 /**
@@ -27,6 +28,7 @@ var config = {
 gulp.task('scripts', function() {
 	return gulp.src(config.js_path+'/*')
 		.pipe(filter('**/*.js'))
+		.pipe(babel())
 		.pipe(concat('main.js'))
 		.pipe(gulp.dest(config.ouput_path + '/js'));
 });
@@ -34,9 +36,10 @@ gulp.task('scripts', function() {
 /**
   * @desc compiles vendors from bower_components folder
   * @param none
-  * @return concat compressed file vendors.js into public/js
+  * @return concat compressed file vendors.js into public/js`
 */
 gulp.task('vendors', function() {
+	console.log(bower_files())
 	return gulp.src(bower_files())
 		.pipe(filter('**/*.js'))
 		.pipe(uglify())

@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Jonqth/ra_calculator#readme",
   "dependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^3.9.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-filter": "^5.1.0",
@@ -32,5 +32,10 @@
     "gulp-uglify": "^3.0.1",
     "main-bower-files": "^2.13.1",
     "minimatch": "^3.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "gulp-babel": "^8.0.0"
   }
 }
