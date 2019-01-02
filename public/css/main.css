@@ -1,10 +1,28 @@
 /*! Basscss | http://basscss.com | MIT License */
 /* @import 'basscss-type-scale';
 @import 'basscss-typography';
-@import 'basscss-layout';
-@import 'basscss-align';
 @import 'basscss-margin';
-@import 'basscss-padding'; */
+@import 'basscss-padding';
+@import 'basscss-position';
+@import 'basscss-border';
+@import 'basscss-hide'; */
+/* Basscss Align */
+.align-baseline {
+  vertical-align: baseline;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
 /* Basscss Grid */
 .col {
   float: left;
@@ -208,10 +226,242 @@
 @custom-media --breakpoint-sm (min-width: 40em);
 @custom-media --breakpoint-md (min-width: 52em);
 @custom-media --breakpoint-lg (min-width: 64em);
-/* @import 'basscss-flexbox';
-@import 'basscss-position';
-@import 'basscss-border';
-@import 'basscss-hide'; */
+.flex {
+  display: flex;
+}
+
+@media (--breakpoint-sm) {
+  .sm-flex {
+    display: flex;
+  }
+}
+
+@media (--breakpoint-md) {
+  .md-flex {
+    display: flex;
+  }
+}
+
+@media (--breakpoint-lg) {
+  .lg-flex {
+    display: flex;
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-baseline {
+  align-self: baseline;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+
+/* 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893 */
+.flex-auto {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* 1 */
+  min-height: 0;
+  /* 1 */
+}
+
+.flex-none {
+  flex: none;
+}
+
+.order-0 {
+  order: 0;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.order-last {
+  order: 99999;
+}
+
+@custom-media --breakpoint-sm (min-width: 40em);
+@custom-media --breakpoint-md (min-width: 52em);
+@custom-media --breakpoint-lg (min-width: 64em);
+/* Basscss Layout */
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.fit {
+  max-width: 100%;
+}
+
+.max-width-1 {
+  max-width: var(--width-1);
+}
+
+.max-width-2 {
+  max-width: var(--width-2);
+}
+
+.max-width-3 {
+  max-width: var(--width-3);
+}
+
+.max-width-4 {
+  max-width: var(--width-4);
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+:root {
+  --width-1: 24rem;
+  --width-2: 32rem;
+  --width-3: 48rem;
+  --width-4: 64rem;
+}
+
 /* -------------
 Commons
 -------------- */
@@ -293,6 +543,7 @@ body {
   width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(90deg, #FED500 52%, #555555 48%);
 }
 
 ::-moz-selection {
@@ -317,27 +568,35 @@ Home page styles
 .home.wrapper {
   width: 100%;
   height: 100%;
+}
+
+.home.wrapper .leftside {
+  height: 100vh;
   background-color: #FED500;
 }
 
-.home.wrapper img {
-  width: 12.8rem;
-  height: 12.8rem;
-  -o-object-fit: contain;
-     object-fit: contain;
+.home.wrapper .rightside {
+  height: 100vh;
+  background-color: #555555;
 }
 
-.home.wrapper h1,
-.home.wrapper h3 {
-  letter-spacing: .1rem;
-  font-family: sans-serif;
+@media screen and (min-width: 1024px) {
+  .home.wrapper {
+    margin: auto;
+    max-width: 1140px;
+  }
 }
 
-.home.wrapper h1 {
-  font-size: 3.2rem;
-  margin: 2.4rem;
+@media screen and (max-width: 768px) {
+  .home.wrapper {
+    margin: auto;
+    max-width: 704px;
+  }
 }
 
-.home.wrapper h3 {
-  font-size: 1.8rem;
+@media screen and (max-width: 480px) {
+  .home.wrapper {
+    margin: auto;
+    max-width: 360px;
+  }
 }
