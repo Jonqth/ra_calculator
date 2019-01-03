@@ -19,11 +19,6 @@ Home page styles
       margin: auto;
       max-width: 100%;
     }
-
-    @media screen and (max-width: $break-xs) {
-      margin: auto;
-      max-width: 360px;
-    }
   }
 
   .leftside {
@@ -37,6 +32,14 @@ Home page styles
         padding-top: 170px;
         margin-bottom: 24px;
       }
+    }
+
+    @media screen and (max-width: $break-md) {
+      padding-left: 32px;
+    }
+
+    @media screen and (max-width: $break-xs) {
+      padding-left: 14px;
     }
   }
 
@@ -65,6 +68,7 @@ Home page styles
     @media screen and (max-width: $break-md) {
       height: 542px;
       padding: 0 32px;
+      margin: 24px 0 -122px 0;
     }
 
     @media screen and (max-width: $break-xs) {
@@ -72,6 +76,7 @@ Home page styles
       width: 100%;
       padding: 0;
       height: 895px;
+      margin-bottom: -472px;
     }
 
     .wrapper__form {
@@ -92,6 +97,13 @@ Home page styles
     position: relative;
     width: 100%;
     z-index: 5;
+
+    @media screen and (max-width: $break-md) {
+      padding: 0 32px;
+    }
+    @media screen and (max-width: $break-xs) {
+      padding: 0 8px;
+    }
 
     .results {
       margin-top: 24px;

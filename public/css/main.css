@@ -662,7 +662,7 @@ h3 {
 
 @media screen and (max-width: 768px) {
   h3 {
-    padding-left: 32px;
+    padding-left: 0;
   }
 }
 
@@ -853,13 +853,6 @@ Home page styles
   }
 }
 
-@media screen and (max-width: 480px) {
-  .home.wrapper {
-    margin: auto;
-    max-width: 360px;
-  }
-}
-
 .home .leftside {
   background-color: #FED500;
 }
@@ -873,6 +866,18 @@ Home page styles
   .home .leftside h1 {
     padding-top: 170px;
     margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home .leftside {
+    padding-left: 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home .leftside {
+    padding-left: 14px;
   }
 }
 
@@ -907,6 +912,7 @@ Home page styles
   .home .rightside {
     height: 542px;
     padding: 0 32px;
+    margin: 24px 0 -122px 0;
   }
 }
 
@@ -916,6 +922,7 @@ Home page styles
     width: 100%;
     padding: 0;
     height: 895px;
+    margin-bottom: -472px;
   }
 }
 
@@ -939,6 +946,18 @@ Home page styles
   position: relative;
   width: 100%;
   z-index: 5;
+}
+
+@media screen and (max-width: 768px) {
+  .home .bottomside {
+    padding: 0 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home .bottomside {
+    padding: 0 8px;
+  }
 }
 
 .home .bottomside .results {
