@@ -613,7 +613,7 @@ fonts
 /* -------------
 Types styles
 -------------- */
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Montserrat';
   font-weight: bold;
   text-transform: uppercase;
@@ -645,6 +645,27 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFF;
+  padding-left: 14px;
+}
+
+@media screen and (min-width: 1024px) {
+  h3 {
+    font-size: 22px;
+    line-height: 52px;
+    color: #333333;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h3 {
+    padding-left: 32px;
+  }
+}
+
 /* -------------
 Common styles
 -------------- */
@@ -666,7 +687,7 @@ body {
 
 @media screen and (min-width: 1024px) {
   body {
-    background: linear-gradient(90deg, #FED500 52%, #555555 48%);
+    background: linear-gradient(90deg, #FED500 60%, #555555 40%);
   }
 }
 
@@ -812,7 +833,10 @@ Home page styles
 -------------- */
 .home.wrapper {
   width: 100%;
-  height: 100%;
+}
+
+.home.wrapper .subwrapper {
+  width: 100%;
 }
 
 @media screen and (min-width: 1024px) {
@@ -825,7 +849,7 @@ Home page styles
 @media screen and (max-width: 768px) {
   .home.wrapper {
     margin: auto;
-    max-width: 704px;
+    max-width: 100%;
   }
 }
 
@@ -840,18 +864,6 @@ Home page styles
   background-color: #FED500;
 }
 
-@media screen and (min-width: 768px) {
-  .home .leftside {
-    height: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .home .leftside {
-    height: 100vh;
-  }
-}
-
 .home .leftside h1 {
   padding-top: 32px;
   margin-bottom: 12px;
@@ -864,20 +876,37 @@ Home page styles
   }
 }
 
+.home .rightside__hollow {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+  .home .rightside__hollow {
+    visibility: visible;
+    height: 100vh;
+    position: absolute;
+    right: 4.1%;
+    background-color: #555555;
+  }
+}
+
 .home .rightside {
+  position: relative;
+  z-index: 4;
   background-color: #555555;
 }
 
 @media screen and (min-width: 1024px) {
   .home .rightside {
     padding-left: 30px;
-    height: 100vh;
+    height: auto;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .home .rightside {
     height: 542px;
+    padding: 0 32px;
   }
 }
 
@@ -885,6 +914,7 @@ Home page styles
   .home .rightside {
     margin-top: 24px;
     width: 100%;
+    padding: 0;
     height: 895px;
   }
 }
@@ -903,4 +933,19 @@ Home page styles
   .home .rightside .wrapper__form {
     height: 32px;
   }
+}
+
+.home .bottomside {
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
+
+.home .bottomside .results {
+  margin-top: 24px;
+  background-color: #FFF;
+  border-radius: 8px;
+  height: 200px;
+  background: #FFFFFF;
+  box-shadow: 0 12px 44px 0 rgba(0, 0, 0, 0.1);
 }

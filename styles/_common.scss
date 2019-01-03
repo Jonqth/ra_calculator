@@ -18,7 +18,7 @@ body {
   background: $ra-yellow;
 
   @media screen and (min-width: $break-md-ls) {
-    background: linear-gradient(90deg, $ra-yellow 52%, $ra-deepgrey 48%);
+    background: linear-gradient(90deg, $ra-yellow 60%, $ra-deepgrey 40%);
   }
 }
 
