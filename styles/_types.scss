@@ -2,7 +2,7 @@
 Types styles
 -------------- */
 
-h1, h2, h3 {
+h1, h2, h3, em {
     font-family: 'Montserrat';
     font-weight: bold;
     text-transform: uppercase;
@@ -45,4 +45,13 @@ h3 {
     @media screen and (max-width: $break-md) {
         padding-left: 0;
     }
+}
+
+em.mention {
+    display: block;
+    margin-top: 56px;
+    color: $ra-darkgrey;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: lowercase;
 }
