@@ -109,9 +109,17 @@ Home page styles
       margin-top: 24px;
       background-color: $ra-white;
       border-radius: 8px;
-      height: 200px;
       background: #FFFFFF;
       box-shadow: 0 12px 44px 0 rgba(0,0,0,0.10);
+
+      .results__table {
+
+        .legend {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          background-color: $ra-offgrey;
+        }
+      }
     }
   }
 }

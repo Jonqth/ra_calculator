@@ -1,0 +1,26 @@
+/* TABLE */
+
+.column {
+    box-sizing: border-box;
+    border-left: 1px solid $ra-offgrey;
+}
+
+.cell {
+    align-items: center;
+    justify-content: center;
+    height: 76px;
+    width: 100%;
+    border-bottom: 1px solid $ra-offgrey;
+
+    &.first {
+        align-items: flex-start;
+        padding-left: 42px;
+    }
+
+    span {
+        font-family: 'Montserrat';
+        font-weight: 600;
+        color: $ra-darkgrey;
+        font-size: 16px;
+    }
+}
