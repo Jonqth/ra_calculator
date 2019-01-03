@@ -2,7 +2,7 @@
 Types styles
 -------------- */
 
-h1, h2 {
+h1, h2, h3 {
     font-family: 'Montserrat';
     font-weight: bold;
     text-transform: uppercase;
@@ -27,5 +27,22 @@ h2 {
     @media screen and (min-width: $break-md-ls) {
         font-size: 36px;
         line-height: 52px;
+    }
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 20px;
+    color: $ra-white;
+    padding-left: 14px;
+
+    @media screen and (min-width: $break-md-ls) {
+        font-size: 22px;
+        line-height: 52px;
+        color: $ra-darkgrey;
+    }
+
+    @media screen and (max-width: $break-md) {
+        padding-left: 32px;
     }
 }
