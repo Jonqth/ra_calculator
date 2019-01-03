@@ -703,13 +703,79 @@ Components
   color: #FFF;
   background-color: #474747;
   height: 48px;
-  padding: 0 26px;
+  padding: 0 26px 0 16px;
+  margin-bottom: 24px;
   box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.field.form__volume {
+  height: 64px;
+}
+
+.field.form__volume input {
+  height: 64px;
 }
 
 @media screen and (min-width: 1024px) {
   .field {
     height: 64px;
+  }
+  .field.form__volume {
+    height: 80px;
+  }
+  .field.form__volume input {
+    height: 80px;
+  }
+}
+
+.field span {
+  font-size: 14px;
+}
+
+.field span.subtitle {
+  display: inline-block;
+  padding-top: 6px;
+  font-size: 12px;
+}
+
+.field span span {
+  color: #FFF;
+  opacity: .4;
+}
+
+.field input[type=number]::-webkit-inner-spin-button,
+.field input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.field input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.field input {
+  display: block;
+  background-color: #3B3B3B;
+  border: 0;
+  width: 33%;
+  height: 48px;
+  border-radius: 0;
+  outline: 0;
+  position: relative;
+  margin-right: -26px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0;
+  color: #FFF;
+}
+
+@media screen and (min-width: 1024px) {
+  .field input {
+    height: 64px;
+    font-size: 16px;
+    width: 33%;
   }
 }
 

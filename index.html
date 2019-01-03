@@ -30,6 +30,52 @@
             <option value="5">5 KM</option>
           </select>
         </div>
+        <div class="form__time flex flex-wrap items-center field">
+          <span>Temps</span>
+          <input 
+            type="text" 
+            name="time"
+            required
+            placeholder="00:00:00"
+          />
+        </div>
+        <div class="form__marathons flex flex-wrap items-center field">
+            <span>
+              Nombres de marathons <span>*</span>
+            </span>
+            <input
+              type="number"
+              pattern="\[0-9]{1,5}"
+              name="marathons"
+              required
+              placeholder="0"
+            />
+        </div>
+        <div class="form__semis flex flex-wrap items-center field">
+            <span>
+              Nombres de semi-marathons <span>*</span>
+            </span>
+            <input
+              type="number"
+              pattern="\[0-9]{1,5}"
+              name="marathons"
+              required
+              placeholder="0"
+            />
+        </div>
+        <div class="form__volume flex flex-wrap items-center field">
+              <span>
+                Volume d'entrainement <br />
+                <span class="subtitle">en km par semaine</span>
+              </span>
+              <input
+                type="number"
+                pattern="\[0-9]{1,5}"
+                name="Volume"
+                required
+                placeholder="0"
+              />
+        </div>
       </form>
     </div>
   </div>
