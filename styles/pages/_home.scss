@@ -10,14 +10,20 @@ Home page styles
       width: 100%;
     }
 
-    @media screen and (min-width: $break-md-ls) {
-      margin: auto;
-      max-width: 1140px;
-    }
 
     @media screen and (max-width: $break-md) {
       margin: auto;
       max-width: 100%;
+    }
+
+    @media screen and (min-width: $break-md-ls) {
+      margin: auto;
+      max-width: 960px;
+    }
+
+    @media screen and (min-width: $break-lg) {
+      margin: auto;
+      max-width: 1140px;
     }
   }
 
@@ -29,6 +35,10 @@ Home page styles
       margin-bottom: 12px;
 
       @media screen and (min-width: $break-md-ls) {
+        padding-top: 80px;
+      }
+
+      @media screen and (min-width: $break-lg) {
         padding-top: 170px;
         margin-bottom: 24px;
       }
@@ -67,11 +77,12 @@ Home page styles
     @media screen and (min-width: $break-md-ls) {
       padding-left: 30px;
       height: auto;
+      background-color: transparent;
     }
 
     @media screen and (max-width: $break-md) {
       height: 542px;
-      padding: 0 32px;
+      padding: 12px 32px;
       margin: 24px 0 -122px 0;
     }
 
@@ -86,13 +97,18 @@ Home page styles
     .wrapper__form {
       padding-top: 24px;
 
-      @media screen and (min-width: $break-md-ls) {
-        padding-top: 160px;
-      }
-  
       @media screen and (max-width: $break-md) {
         height: 32px;
       }
+
+      @media screen and (min-width: $break-md-ls) {
+        padding-top: 80px;
+      }
+
+      @media screen and (min-width: $break-lg) {
+        padding-top: 160px;
+      }
+  
     }
   }
   
