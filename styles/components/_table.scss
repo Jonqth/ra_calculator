@@ -12,6 +12,10 @@
     width: 100%;
     border-bottom: 1px solid $ra-offgrey;
 
+    @media screen and (max-width: $break-md-ls) {
+        height: 54px;
+    }
+
     &.first {
         align-items: flex-start;
         padding-left: 42px;
@@ -22,5 +26,9 @@
         font-weight: 600;
         color: $ra-darkgrey;
         font-size: 16px;
+
+        @media screen and (max-width: $break-md-ls) {
+            font-size: 14px;
+        }
     }
 }

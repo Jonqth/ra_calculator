@@ -121,6 +121,7 @@ Home page styles
     @media screen and (max-width: $break-md) {
       padding: 0 32px;
     }
+
     @media screen and (max-width: $break-xs) {
       padding: 0 8px;
     }
@@ -130,14 +131,26 @@ Home page styles
       background-color: $ra-white;
       border-radius: 8px;
       background: #FFFFFF;
+      overflow: hidden;
       box-shadow: 0 12px 44px 0 rgba(0,0,0,0.10);
 
-      .results__table {
+      .legend {
+        background-color: $ra-offgrey;
+      }
+    
+      .heading {
+        width: 100%;
+      }
 
-        .legend {
-          border-top-left-radius: 8px;
-          border-bottom-left-radius: 8px;
-          background-color: $ra-offgrey;
+      .results__table {
+        @media screen and (max-width: $break-xs) {
+          display: none;
+        }
+      }
+
+      .results__table_mobile {
+        @media screen and (min-width: $break-xs) {
+          display: none;
         }
       }
     }

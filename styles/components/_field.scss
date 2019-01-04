@@ -19,7 +19,7 @@
         }
     }
 
-    @media screen and (min-width: $break-md-ls) {
+    @media screen and (min-width: $break-lg) {
         height: 64px;
 
         &.form__volume {
@@ -72,7 +72,7 @@
         padding: 0;
         color: $ra-white;
 
-        @media screen and (min-width: $break-md-ls) {
+        @media screen and (min-width: $break-lg) {
             height: 64px;
             font-size: 16px;
             width: 33%;
@@ -97,7 +97,7 @@
         -moz-appearance: none;
         appearance: none;
 
-        @media screen and (min-width: $break-md-ls) {
+        @media screen and (min-width: $break-lg) {
             height: 64px;
         }
     }

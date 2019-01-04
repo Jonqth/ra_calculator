@@ -54,4 +54,10 @@ em.mention {
     font-size: 12px;
     font-weight: 600;
     text-transform: lowercase;
+
+    @media screen and (max-width: $break-md-ls) {
+        padding-left: 6px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
 }
