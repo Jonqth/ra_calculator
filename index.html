@@ -24,7 +24,7 @@
         <div class="rightside sm-col sm-col-12 lg-col-5">
           <form class="wrapper__form">
             <div class="form__reference field">
-              <select name="reference">
+              <select id="reference" class="pace_vars" name="reference">
                 <option value="42" selected>42 KM</option>
                 <option value="21">21 KM</option>
                 <option value="10">10 KM</option>
@@ -36,6 +36,8 @@
               <input 
                 type="text" 
                 name="time"
+                id="time"
+                class="pace_vars"
                 required
                 placeholder="00:00:00"
               />
@@ -48,6 +50,8 @@
                   type="number"
                   pattern="\[0-9]{1,5}"
                   name="marathons"
+                  id="marathons"
+                  class="pace_vars"
                   required
                   placeholder="0"
                 />
@@ -59,7 +63,9 @@
                 <input
                   type="number"
                   pattern="\[0-9]{1,5}"
-                  name="marathons"
+                  name="semis"
+                  id="semis"
+                  class="pace_vars"
                   required
                   placeholder="0"
                 />
@@ -72,7 +78,9 @@
                   <input
                     type="number"
                     pattern="\[0-9]{1,5}"
-                    name="Volume"
+                    name="volume"
+                    id="volume"
+                    class="pace_vars"
                     required
                     placeholder="0"
                   />
