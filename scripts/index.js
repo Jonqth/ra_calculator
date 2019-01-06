@@ -1,4 +1,3 @@
-
 let userInfosController = {
   
   // Value of the user form
@@ -11,7 +10,7 @@ let userInfosController = {
 
     $(".pace_vars").each((i, el) => {
       let _el = $(el);
-      _el.on("change", () => userInfosController.updateValues());
+      _el.on("change keypress paste input", () => userInfosController.updateValues());
     });
   },
 
@@ -26,6 +25,46 @@ let userInfosController = {
     });
 
     console.log(userInfosController.values);
+    paceCalculationsController.calculatePerfIndex(userInfosController.values);
+  }
+}
+
+let paceCalculationsController = {
+
+  // Calculate the perfomance index
+  calculatePerfIndex: (values) => {
+    const MR_VAL = 5,
+          SM_VAL = 3,
+          VL_VAL = 60,
+          PE_VAL = 0.9;
+
+    // Performance Index to be 
+    // determined by user infos 
+    let nbOfMarathons = values[2],
+        nbOfSemis     = values[3],
+        volOfTraining = values[4];
+
+    let MarathonsIndex  = nbOfMarathons >= MR_VAL ? 1 : 1 - (0.05 / (nbOfMarathons + 1)),
+        SemisIndex      = nbOfSemis >= SM_VAL ? 1 : 1 - (0.05 / (nbOfSemis + 1)),
+        VolumeIndex     = volOfTraining >= VL_VAL ? 1 : 1 - (60 - volOfTraining) * 0.0015;
+
+    let perfIndex = (1 * VolumeIndex * SemisIndex * MarathonsIndex) < PE_VAL ? PE_VAL : (1 * VolumeIndex * SemisIndex * MarathonsIndex);
+
+    console.log("VALUES", nbOfMarathons, nbOfSemis, volOfTraining);
+    console.log("INDEXS", MarathonsIndex, SemisIndex, VolumeIndex);
+    console.log("PERF_INDEX", perfIndex);
+  },
+
+  // Calculate the pace from user informations
+  // if form is complete & valid
+  calculatePace: () => {
+    // Pace to be determined by reference 
+    // (42, 21, ...)
+
+  },
+
+  displayResults: () => {
+
   }
 }
 
