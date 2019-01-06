@@ -60,6 +60,8 @@ let paceCalcController = {
 
     let requiredValues = [nbOfMarathons, nbOfSemis, volOfTraining];
     paceCalcController.perf_index = requiredValues.every(o => o !== "") ? perfIndex : null;
+
+    console.log(paceCalcController.perf_index);
   },
 
   // Calculate the pace from user informations
