@@ -47,7 +47,6 @@ let paceCalcController = {
     let perfIndex = 1 * VolumeIndex * SemisIndex * MarathonsIndex < PE_VAL ? PE_VAL : 1 * VolumeIndex * SemisIndex * MarathonsIndex;
     let requiredValues = [nbOfMarathons, nbOfSemis, volOfTraining];
     paceCalcController.perf_index = requiredValues.every(o => o !== "") ? perfIndex : null;
-    console.log(paceCalcController.perf_index);
   },
   // Calculate the pace from user informations
   // if form is complete & valid
