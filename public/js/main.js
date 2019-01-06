@@ -20,11 +20,16 @@ let userInfosController = {
 
       userInfosController.values.push(_el.val());
     });
-    console.log(userInfosController.values);
-    paceCalculationsController.calculatePerfIndex(userInfosController.values);
+    paceCalcController.calculatePerfIndex(userInfosController.values);
   }
 };
-let paceCalculationsController = {
+let paceCalcController = {
+  // Value of the performance index
+  perf_index: null,
+  // Values of the time etimastes
+  time_estimates: null,
+  // Values of the pace times
+  pace_times: null,
   // Calculate the perfomance index
   calculatePerfIndex: values => {
     const MR_VAL = 5,
@@ -40,9 +45,8 @@ let paceCalculationsController = {
         SemisIndex = nbOfSemis >= SM_VAL ? 1 : 1 - 0.05 / (nbOfSemis + 1),
         VolumeIndex = volOfTraining >= VL_VAL ? 1 : 1 - (60 - volOfTraining) * 0.0015;
     let perfIndex = 1 * VolumeIndex * SemisIndex * MarathonsIndex < PE_VAL ? PE_VAL : 1 * VolumeIndex * SemisIndex * MarathonsIndex;
-    console.log("VALUES", nbOfMarathons, nbOfSemis, volOfTraining);
-    console.log("INDEXS", MarathonsIndex, SemisIndex, VolumeIndex);
-    console.log("PERF_INDEX", perfIndex);
+    let requiredValues = [nbOfMarathons, nbOfSemis, volOfTraining];
+    paceCalcController.perf_index = requiredValues.map(o => o !== "") ? perfIndex : null;
   },
   // Calculate the pace from user informations
   // if form is complete & valid
