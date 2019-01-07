@@ -8,7 +8,7 @@ let userInfosController = {
     $(".pace_vars").each((i, el) => {
       let _el = $(el);
 
-      _el.on("change keypress paste input", () => userInfosController.updateValues());
+      _el.on("change paste", () => userInfosController.updateValues());
     });
   },
   // Updates all values from
@@ -47,10 +47,16 @@ let paceCalcController = {
     let perfIndex = 1 * VolumeIndex * SemisIndex * MarathonsIndex < PE_VAL ? PE_VAL : 1 * VolumeIndex * SemisIndex * MarathonsIndex;
     let requiredValues = [nbOfMarathons, nbOfSemis, volOfTraining];
     paceCalcController.perf_index = requiredValues.every(o => o !== "") ? perfIndex : null;
+    paceCalcController.calculatePace(values);
   },
   // Calculate the pace from user informations
   // if form is complete & valid
-  calculatePace: () => {// Pace to be determined by reference 
+  calculatePace: values => {
+    const POW_VAL = 1.06;
+    let mSeconds = moment.duration(values[1]).asMilliseconds();
+    console.log(mSeconds);
+    let hours = moment.utc(mSeconds).format("HH:mm:ss");
+    console.log(hours); // Pace to be determined by reference 
     // (42, 21, ...)
   },
   displayResults: () => {}

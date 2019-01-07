@@ -23,7 +23,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "moment": "momentjs#^2.23.0"
   },
   "devDependencies": {}
 }
