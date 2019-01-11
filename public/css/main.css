@@ -752,7 +752,7 @@ Components
 }
 
 .field.form__volume input {
-  height: 64px;
+  height: 62px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -763,7 +763,7 @@ Components
     height: 80px;
   }
   .field.form__volume input {
-    height: 80px;
+    height: 78px;
   }
 }
 
