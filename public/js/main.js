@@ -25,11 +25,11 @@ let userInfosController = {
 };
 let paceCalcController = {
   // Value of the performance index
-  perf_index: null,
+  perf_index: 0,
   // Values of the time etimastes
-  time_estimates: null,
+  time_estimates: [],
   // Values of the pace times
-  pace_times: null,
+  pace_times: [],
   // Calculate the perfomance index
   calculatePerfIndex: values => {
     const MR_VAL = 5,
@@ -63,20 +63,16 @@ let paceCalcController = {
     let time21 = paceCalcController.getTimeFromDistance(reference, 21.1, mseconds);
     let time10 = paceCalcController.getTimeFromDistance(reference, 10, mseconds);
     let time5 = paceCalcController.getTimeFromDistance(reference, 5, mseconds);
+    paceCalcController.time_estimates = [paceCalcController.convertToHours(time42), paceCalcController.convertToHours(time21), paceCalcController.convertToHours(time10), paceCalcController.convertToHours(time5)];
     console.log('TIME ---------------------------');
-    console.log('Time 42', paceCalcController.convertToHours(time42));
-    console.log('Time 21', paceCalcController.convertToHours(time21));
-    console.log('Time 10', paceCalcController.convertToHours(time10));
-    console.log('Time 5', paceCalcController.convertToHours(time5));
+    console.log(paceCalcController.time_estimates);
     let pace42 = paceCalcController.getPaceFromDistance(42, time42);
     let pace21 = paceCalcController.getPaceFromDistance(21.1, time21);
     let pace10 = paceCalcController.getPaceFromDistance(10, time10);
     let pace5 = paceCalcController.getPaceFromDistance(5, time5);
+    paceCalcController.pace_times = [paceCalcController.convertToHours(pace42), paceCalcController.convertToHours(pace21), paceCalcController.convertToHours(pace10), paceCalcController.convertToHours(pace5)];
     console.log('PACE ---------------------------');
-    console.log('Pace 42', paceCalcController.convertToHours(pace42));
-    console.log('Pace 21', paceCalcController.convertToHours(pace21));
-    console.log('Pace 10', paceCalcController.convertToHours(pace10));
-    console.log('Pace 5', paceCalcController.convertToHours(pace5));
+    console.log(paceCalcController.pace_times);
   },
   displayResults: () => {},
   getTimeFromDistance: (reference, distance, mseconds) => {
@@ -91,7 +87,6 @@ let paceCalcController = {
     }
   },
   getPaceFromDistance: (distance, mseconds) => {
-    console.log('PACE FORM:', distance, Math.ceil(mseconds));
     return Math.ceil(mseconds) / distance;
   },
   convertToSeconds: time => moment.duration(time).asMilliseconds(),
