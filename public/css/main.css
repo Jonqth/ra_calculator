@@ -795,7 +795,7 @@ Components
 .field input {
   display: block;
   background-color: #3B3B3B;
-  border: 1px solid #3B3B3B;
+  border: 1px solid transparent;
   width: 33%;
   height: 46px;
   border-radius: 0;
