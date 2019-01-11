@@ -23,16 +23,22 @@
         </div>
         <div class="rightside sm-col sm-col-12 lg-col-5">
           <form class="wrapper__form">
-            <div class="form__reference field">
-              <select id="reference" class="pace_vars" name="reference">
-                <option value="42" selected>42 KM</option>
-                <option value="21.1">21 KM</option>
-                <option value="10">10 KM</option>
-                <option value="5">5 KM</option>
-              </select>
+            <div class="form__reference flex flex-wrap items-center field">
+              <span>Course de référence</span>
+              <div class="wrapper__select">
+                <select id="reference" class="pace_vars" name="reference">
+                  <option value="42.195">42 KM</option>
+                  <option value="21.0975" selected>21 KM</option>
+                  <option value="10">10 KM</option>
+                  <option value="5">5 KM</option>
+                </select>
+              </div>
             </div>
             <div class="form__time flex flex-wrap items-center field">
-              <span>Temps</span>
+              <span>
+                Temps <br />
+                <span class="subtitle">au format hh:mm:ss</span>
+              </span>
               <input 
                 type="text" 
                 name="time"
@@ -72,7 +78,7 @@
             </div>
             <div class="form__volume flex flex-wrap items-center field">
                   <span>
-                    Volume d'entrainement <br />
+                    Volume d'entrainement normal <br />
                     <span class="subtitle">en km par semaine</span>
                   </span>
                   <input

@@ -792,6 +792,19 @@ Components
   -moz-appearance: textfield;
 }
 
+.field.form__time .subtitle {
+  transition: .25s all ease-in;
+}
+
+.field.form__time.error .subtitle {
+  color: red;
+  opacity: 1;
+}
+
+.field.form__time.error input {
+  border: 1px solid red;
+}
+
 .field input {
   display: block;
   background-color: #3B3B3B;
@@ -810,25 +823,36 @@ Components
   transition: .25s border ease-in;
 }
 
-.field input.error {
-  border-color: red;
-}
-
 @media screen and (min-width: 1200px) {
   .field input {
     height: 62px;
     font-size: 16px;
     width: 33%;
+    position: relative;
+    margin-right: -26px;
   }
 }
 
-.form__reference {
-  background: url("../../assets/images/ra-down.svg") no-repeat 94% center #474747;
+.form__reference .wrapper__select {
+  background: url("../../assets/images/ra-down.svg") no-repeat 88% center #3B3B3B;
+  width: 33%;
+  position: relative;
+  margin-right: -26px;
+  float: right;
+  height: 48px;
+}
+
+@media screen and (min-width: 1200px) {
+  .form__reference .wrapper__select {
+    height: 64px;
+    background: url("../../assets/images/ra-down.svg") no-repeat 86% center #3B3B3B;
+  }
 }
 
 .form__reference select {
   background: transparent;
   border: none;
+  padding-left: 16px;
   width: 100%;
   height: 48px;
   font-family: 'Montserrat';
@@ -843,6 +867,7 @@ Components
 
 @media screen and (min-width: 1200px) {
   .form__reference select {
+    padding-left: 24px;
     height: 64px;
   }
 }

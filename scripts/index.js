@@ -61,7 +61,7 @@ let paceCalcController = {
     let requiredValues = [nbOfMarathons, nbOfSemis, volOfTraining];
 
     let rule  = /^[0-9]{2}\:[0-9]{2}\:[0-9]{2}/,
-        _time = $("#time");
+        _time = $(".form__time");
 
     if(values[1].match(rule) || values[1] === "") {
       _time.removeClass("error");
@@ -83,8 +83,8 @@ let paceCalcController = {
     
     // Time to be determined by reference 
     // (42, 21, ...)
-    let time42 = paceCalcController.getTimeFromDistance(reference, 42, mseconds);
-    let time21 = paceCalcController.getTimeFromDistance(reference, 21.1, mseconds);
+    let time42 = paceCalcController.getTimeFromDistance(reference, 42.195, mseconds);
+    let time21 = paceCalcController.getTimeFromDistance(reference, 21.0975, mseconds);
     let time10 = paceCalcController.getTimeFromDistance(reference, 10, mseconds);
     let time5  = paceCalcController.getTimeFromDistance(reference, 5, mseconds);
 
@@ -97,8 +97,8 @@ let paceCalcController = {
 
     // Pace to be determined by reference 
     // (42, 21, ...)
-    let pace42 = paceCalcController.getPaceFromDistance(42, time42);
-    let pace21 = paceCalcController.getPaceFromDistance(21.1, time21);
+    let pace42 = paceCalcController.getPaceFromDistance(42.195, time42);
+    let pace21 = paceCalcController.getPaceFromDistance(21.0975, time21);
     let pace10 = paceCalcController.getPaceFromDistance(10, time10);
     let pace5  = paceCalcController.getPaceFromDistance(5, time5);
 
@@ -118,7 +118,7 @@ let paceCalcController = {
     if(distance === reference) { 
       return mseconds; 
     }
-    else if(distance === 42) {
+    else if(distance === 42.195) {
       return mseconds * (Math.pow((distance / reference), POW_VAL) / paceCalcController.perf_index); 
     }
     else { 
