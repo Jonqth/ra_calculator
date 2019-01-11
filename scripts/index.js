@@ -60,10 +60,18 @@ let paceCalcController = {
 
     let requiredValues = [nbOfMarathons, nbOfSemis, volOfTraining];
 
-    if(requiredValues.every(o => o !== "")) {
-      paceCalcController.perf_index = perfIndex;
-      paceCalcController.calculateTimeFor(values);
-    }
+    let rule  = /^[0-9]{2}\:[0-9]{2}\:[0-9]{2}/,
+        _time = $("#time");
+
+    if(values[1].match(rule) || values[1] === "") {
+      _time.removeClass("error");
+
+      if(requiredValues.every(o => o !== "")) {
+        paceCalcController.perf_index = perfIndex;
+        paceCalcController.calculateTimeFor(values);
+      }
+      
+    } else { _time.addClass("error"); }
     
   },
 

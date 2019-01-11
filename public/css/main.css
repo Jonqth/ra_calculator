@@ -795,9 +795,9 @@ Components
 .field input {
   display: block;
   background-color: #3B3B3B;
-  border: 0;
+  border: 1px solid #3B3B3B;
   width: 33%;
-  height: 48px;
+  height: 46px;
   border-radius: 0;
   outline: 0;
   position: relative;
@@ -807,11 +807,16 @@ Components
   font-weight: 600;
   padding: 0;
   color: #FFF;
+  transition: .25s border ease-in;
+}
+
+.field input.error {
+  border-color: red;
 }
 
 @media screen and (min-width: 1200px) {
   .field input {
-    height: 64px;
+    height: 62px;
     font-size: 16px;
     width: 33%;
   }
