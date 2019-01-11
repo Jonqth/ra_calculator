@@ -8,7 +8,7 @@ let userInfosController = {
     $(".pace_vars").each((i, el) => {
       let _el = $(el);
 
-      _el.on("change paste", () => userInfosController.updateValues());
+      _el.on("change input keypress paste", () => userInfosController.updateValues());
     });
   },
   // Updates all values from
@@ -30,8 +30,6 @@ let paceCalcController = {
   time_estimates: [],
   // Values of the pace times
   pace_times: [],
-  // Object of pace & times
-  paces_times: {},
   // Calculate the perfomance index
   calculatePerfIndex: values => {
     const MR_VAL = 5,
@@ -64,14 +62,15 @@ let paceCalcController = {
     let time42 = paceCalcController.getTimeFromDistance(reference, 42, mseconds);
     let time21 = paceCalcController.getTimeFromDistance(reference, 21.1, mseconds);
     let time10 = paceCalcController.getTimeFromDistance(reference, 10, mseconds);
-    let time5 = paceCalcController.getTimeFromDistance(reference, 5, mseconds); // Pace to be determined by reference 
+    let time5 = paceCalcController.getTimeFromDistance(reference, 5, mseconds);
+    paceCalcController.time_estimates = [paceCalcController.convertToHours(time42), paceCalcController.convertToHours(time21), paceCalcController.convertToHours(time10), paceCalcController.convertToHours(time5)]; // Pace to be determined by reference 
     // (42, 21, ...)
 
     let pace42 = paceCalcController.getPaceFromDistance(42, time42);
     let pace21 = paceCalcController.getPaceFromDistance(21.1, time21);
     let pace10 = paceCalcController.getPaceFromDistance(10, time10);
     let pace5 = paceCalcController.getPaceFromDistance(5, time5);
-    paceCalcController.pace_times = [["5 km", paceCalcController.convertToHours(time5), paceCalcController.convertToHours(pace5)], ["10 km", paceCalcController.convertToHours(time10), paceCalcController.convertToHours(pace10)], ["21 km", paceCalcController.convertToHours(time21), paceCalcController.convertToHours(pace21)], ["42 km", paceCalcController.convertToHours(time42), paceCalcController.convertToHours(pace42)]];
+    paceCalcController.pace_times = [paceCalcController.convertToHours(pace42), paceCalcController.convertToHours(pace21), paceCalcController.convertToHours(pace10), paceCalcController.convertToHours(pace5)];
     paceCalcController.displayResults();
   },
   getTimeFromDistance: (reference, distance, mseconds) => {
@@ -89,9 +88,14 @@ let paceCalcController = {
     return Math.ceil(mseconds) / distance;
   },
   displayResults: () => {
-    paceCalcController.pace_times.map(item => {
-      item.map(data => console.log(data));
-    });
+    $(".ft_time > span").text(paceCalcController.time_estimates[0]);
+    $(".ft_pace > span").text(paceCalcController.pace_times[0]);
+    $(".to_time > span").text(paceCalcController.time_estimates[1]);
+    $(".to_pace > span").text(paceCalcController.pace_times[1]);
+    $(".tn_time > span").text(paceCalcController.time_estimates[2]);
+    $(".tn_pace > span").text(paceCalcController.pace_times[2]);
+    $(".fv_time > span").text(paceCalcController.time_estimates[3]);
+    $(".fv_pace > span").text(paceCalcController.pace_times[3]);
   },
   convertToSeconds: time => moment.duration(time).asMilliseconds(),
   convertToHours: mseconds => moment.utc(mseconds).format("HH:mm:ss")
