@@ -10,7 +10,7 @@ let userInfosController = {
 
     $(".pace_vars").each((i, el) => {
       let _el = $(el);
-      _el.on("change keypress input paste", () => userInfosController.updateValues());
+      _el.on("change paste", () => userInfosController.updateValues());
     });
   },
 
@@ -80,11 +80,22 @@ let paceCalcController = {
     let time10 = paceCalcController.getTimeFromDistance(reference, 10, mseconds);
     let time5  = paceCalcController.getTimeFromDistance(reference, 5, mseconds);
 
-    console.log('---------------------------');
-    console.log('Time 42', time42);
-    console.log('Time 21', time21);
-    console.log('Time 10', time10);
-    console.log('Time 5', time5);
+    console.log('TIME ---------------------------');
+    console.log('Time 42', paceCalcController.convertToHours(time42));
+    console.log('Time 21', paceCalcController.convertToHours(time21));
+    console.log('Time 10', paceCalcController.convertToHours(time10));
+    console.log('Time 5',  paceCalcController.convertToHours(time5));
+
+    let pace42 = paceCalcController.getPaceFromDistance(42, time42);
+    let pace21 = paceCalcController.getPaceFromDistance(21.1, time21);
+    let pace10 = paceCalcController.getPaceFromDistance(10, time10);
+    let pace5  = paceCalcController.getPaceFromDistance(5, time5);
+
+    console.log('PACE ---------------------------');
+    console.log('Pace 42', paceCalcController.convertToHours(pace42));
+    console.log('Pace 21', paceCalcController.convertToHours(pace21));
+    console.log('Pace 10', paceCalcController.convertToHours(pace10));
+    console.log('Pace 5',  paceCalcController.convertToHours(pace5));
 
   },
 
@@ -93,16 +104,21 @@ let paceCalcController = {
   getTimeFromDistance: (reference, distance, mseconds) => {
     const POW_VAL = 1.06;
 
-    if(reference === distance) { 
-      return paceCalcController.convertToHours(mseconds); 
+    if(distance === reference) { 
+      return mseconds; 
     }
-    else if(reference === 42) {
-      return paceCalcController.convertToHours(mseconds * (Math.pow((distance / reference), POW_VAL) / paceCalcController.perf_index)); 
+    else if(distance === 42) {
+      return mseconds * (Math.pow((distance / reference), POW_VAL) / paceCalcController.perf_index); 
     }
     else { 
-      return paceCalcController.convertToHours(mseconds * (Math.pow((distance / reference), POW_VAL))); 
+      return mseconds * (Math.pow((distance / reference), POW_VAL)); 
     }
   },
+
+  getPaceFromDistance: (distance, mseconds) => {
+    console.log('PACE FORM:', distance, Math.ceil(mseconds));
+    return Math.ceil(mseconds) / distance;
+  }, 
 
   convertToSeconds: time => moment.duration(time).asMilliseconds(),
 
