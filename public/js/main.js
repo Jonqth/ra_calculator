@@ -38,10 +38,9 @@ let paceCalcController = {
           PE_VAL = 0.9; // Performance Index to be 
     // determined by user infos 
 
-    let nbOfMarathons = parseInt(values[2]),
-        nbOfSemis = parseInt(values[3]),
-        volOfTraining = parseInt(values[4]);
-    console.log(nbOfMarathons);
+    let nbOfMarathons = parseInt(values[2]) > 0 ? parseInt(values[2]) : 0,
+        nbOfSemis = parseInt(values[3]) > 0 ? parseInt(values[3]) : 0,
+        volOfTraining = parseInt(values[4]) > 0 ? parseInt(values[4]) : 0;
     let MarathonsIndex = nbOfMarathons >= MR_VAL ? 1 : 1 - 0.05 / (nbOfMarathons + 1),
         SemisIndex = nbOfSemis >= SM_VAL ? 1 : 1 - 0.05 / (nbOfSemis + 1),
         VolumeIndex = volOfTraining >= VL_VAL ? 1 : 1 - (60 - volOfTraining) * 0.0015;
