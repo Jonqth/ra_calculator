@@ -28,7 +28,7 @@ var config = {
 gulp.task('scripts', function() {
 	return gulp.src(config.js_path+'/*')
 		.pipe(filter('**/*.js'))
-		.pipe(babel())
+		.pipe(babel({ minified: true }))
 		.pipe(concat('main.js'))
 		.pipe(gulp.dest(config.ouput_path + '/js'));
 });
@@ -54,11 +54,11 @@ gulp.task('vendors', function() {
 gulp.task('css', function() {
 	return gulp.src(bower_files().concat(config.styles_path + '/main.scss'))
 		.pipe(filter(['**/*.scss', '**/*.css']))
-		.pipe(concat('main.scss'))
 		.pipe(sass({
-				outputStyle: 'expanded', //at least nested
-				includePaths: [config.styles_path]
-			}).on('error', sass.logError))
+			outputStyle: 'compressed', //at least nested || expanded
+			includePaths: [config.styles_path]
+		}).on('error', sass.logError))
+		.pipe(concat('main.css'))
 		.pipe(autoprefixer())
 		.pipe(gulp.dest(config.ouput_path + '/css'));
 });

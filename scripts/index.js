@@ -45,9 +45,7 @@ let paceCalcController = {
           SM_VAL = 3,
           VL_VAL = 60,
           PE_VAL = 0.9;
-
-    // Performance Index to be 
-    // determined by user infos 
+          
     let nbOfMarathons = parseInt(values[2]) > 0 ? parseInt(values[2]) : 0,
         nbOfSemis     = parseInt(values[3]) > 0 ? parseInt(values[3]) : 0,
         volOfTraining = parseInt(values[4]) > 0 ? parseInt(values[4]) : 0;
@@ -80,9 +78,7 @@ let paceCalcController = {
   calculateTimeFor: (values) => {
     let reference = parseFloat(values[0]);
     let mseconds  = paceCalcController.convertToSeconds(values[1]);
-    
-    // Time to be determined by reference 
-    // (42, 21, ...)
+
     let time42 = paceCalcController.getTimeFromDistance(reference, 42.195, mseconds);
     let time21 = paceCalcController.getTimeFromDistance(reference, 21.0975, mseconds);
     let time10 = paceCalcController.getTimeFromDistance(reference, 10, mseconds);
@@ -95,8 +91,6 @@ let paceCalcController = {
       paceCalcController.convertToHours(time5),
     ];
 
-    // Pace to be determined by reference 
-    // (42, 21, ...)
     let pace42 = paceCalcController.getPaceFromDistance(42.195, time42);
     let pace21 = paceCalcController.getPaceFromDistance(21.0975, time21);
     let pace10 = paceCalcController.getPaceFromDistance(10, time10);
