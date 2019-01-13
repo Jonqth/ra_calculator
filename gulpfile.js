@@ -2,7 +2,8 @@ var gulp = require('gulp'),
 		filter = require('gulp-filter'),
 		autoprefixer = require('gulp-autoprefixer'),
 		concat = require('gulp-concat'),
-		uglify = require('gulp-uglify')
+		uglify = require('gulp-uglify'),
+		uglifyES = require('gulp-uglify-es').default,
 		sass = require ('gulp-sass'),
 		notify = require('gulp-notify'),
 		svgo = require('gulp-svgo'),
@@ -29,6 +30,7 @@ gulp.task('scripts', function() {
 	return gulp.src(config.js_path+'/*')
 		.pipe(filter('**/*.js'))
 		.pipe(babel({ minified: true }))
+		.pipe(uglifyES())
 		.pipe(concat('main.js'))
 		.pipe(gulp.dest(config.ouput_path + '/js'));
 });
@@ -41,7 +43,7 @@ gulp.task('scripts', function() {
 gulp.task('vendors', function() {
 	return gulp.src(bower_files())
 		.pipe(filter('**/*.js'))
-		.pipe(uglify())
+		.pipe(uglifyES())
 		.pipe(concat('vendors.js'))
 		.pipe(gulp.dest(config.ouput_path + '/js'));
 });
